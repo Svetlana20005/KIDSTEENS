@@ -4,13 +4,13 @@ import java.io.File;
 import java.util.Objects;
 
 public class Product {
-    private int id, category_id;
+    private long id, category_id;
     private String name;
     private double price;
     private File image;
     private Category category;
 
-    public Product(String name, int category_id , double price) {
+    public Product(String name, long category_id , double price) {
         this.name = name;
         this.category_id = category_id;
         this.price = price;
@@ -29,19 +29,19 @@ public class Product {
         return Objects.hash(id);
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getCategory_id() {
+    public long getCategory_id() {
         return category_id;
     }
 
-    public void setCategory_id(int category_id) {
+    public void setCategory_id(long category_id) {
         this.category_id = category_id;
     }
 

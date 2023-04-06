@@ -38,7 +38,7 @@ public class DBCategories {
     }
     public Category selectByName(String name){
         Cursor cursor = db.query(OpenHelper.CATEGORY_TABLE_NAME,null,
-                OpenHelper.CATEGORIES_NAME + "=" + name,null,null,null,null);
+                OpenHelper.CATEGORIES_NAME + "= ?",new String[]{name},null,null,null);
         cursor.moveToFirst();
         if(!cursor.isAfterLast()){
                 Category c = new Category(

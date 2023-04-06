@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class OpenHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "products.db";
     public static final String PRODUCTS_TABLE_NAME = "products";
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 2;
     public static final String PRODUCTS_ID = "id";
     public static final int PRODUCTS_ID_NUM = 0;
     public static final String PRODUCTS_NAME = "name";
@@ -33,10 +33,11 @@ public class OpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        createPointsTable(db);
+        createProductsTable(db);
+        createCategoriesTable(db);
     }
 
-    private void createPointsTable(SQLiteDatabase db) {
+    private void createProductsTable(SQLiteDatabase db) {
         String query = "create table " + PRODUCTS_TABLE_NAME + "(" +
                 PRODUCTS_ID + " integer primary key autoincrement," +
                 PRODUCTS_NAME + " TEXT," +
@@ -44,7 +45,10 @@ public class OpenHelper extends SQLiteOpenHelper {
                 PRODUCTS_PRICE + " DOUBLE" +
                 ")";
         db.execSQL(query);
-        String query1 = "create table " + PRODUCTS_TABLE_NAME + "(" +
+    }
+
+    private void createCategoriesTable(SQLiteDatabase db) {
+        String query1 = "create table " + CATEGORY_TABLE_NAME + "(" +
                 CATEGORIES_ID + " integer primary key autoincrement," +
                 CATEGORIES_NAME + " TEXT," +
                 CATEGORIES_PARENT_ID + " INTEGER" +
