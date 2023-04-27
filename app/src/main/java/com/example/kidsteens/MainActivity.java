@@ -3,7 +3,9 @@ package com.example.kidsteens;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.VectorDrawable;
 import android.os.Bundle;
+import android.view.View;
 
 import com.yandex.mapkit.Animation;
 import com.yandex.mapkit.MapKitFactory;
@@ -13,6 +15,7 @@ import com.yandex.mapkit.map.CameraPosition;
 import com.yandex.mapkit.map.CameraUpdateReason;
 import com.yandex.mapkit.map.Map;
 import com.yandex.mapkit.mapview.MapView;
+import com.yandex.runtime.ui_view.ViewProvider;
 
 public class MainActivity extends AppCompatActivity {
     MapView mapview;
@@ -40,5 +43,14 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         MapKitFactory.getInstance().onStart();
         mapview.onStart();
+    }
+    private  void addPlacemark(Shop mo){
+        View view = new View(this);
+        view.setBackground(this.getDrawable(R.drawable.ic_baseline_location_on_24));
+        view.setMinimumWidth(100);
+        view.setMinimumHeight(100);
+        //((VectorDrawable) view.getBackground()).setTint(mo.getIntColor(false));
+        mapview.getMap().getMapObjects()
+                .addPlacemark(new Point(mo.getAddress().getLat(),mo.getAddress().getLon()), new ViewProvider(view));
     }
 }
