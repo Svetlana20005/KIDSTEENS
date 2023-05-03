@@ -22,6 +22,7 @@ public class AddProductsActivity extends AppCompatActivity {
         saveProduct.setOnClickListener((v) -> save());
         dbProducts = new DBProducts(getBaseContext());
         dbCategories = new DBCategories(getBaseContext());
+        ShopsServer.sendRequest();
     }
     public void save(){
         String cN = categoryName.getText().toString();
