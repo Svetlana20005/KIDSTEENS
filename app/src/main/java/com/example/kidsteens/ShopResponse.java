@@ -1,5 +1,5 @@
 package com.example.kidsteens;
 
-public class ShopResponce {
+public class ShopResponse {
     public ShopData data;
 }

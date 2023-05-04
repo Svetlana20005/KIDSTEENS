@@ -10,14 +10,13 @@ import java.io.IOException;
 
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.FormBody;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
 public class ShopsServer {
-    public static void sendRequest() {
+    public static void sendRequest(Runnable runnable) {
         HttpUrl.Builder url = HttpUrl.parse("https://5ka.ru/api/v2/stores/?bbox=55.4734638973159,47.361387184204105,55.54039353321981,47.622140815795895").newBuilder();
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
@@ -40,7 +39,10 @@ public class ShopsServer {
                         result = response.body().string().substring(9);
                         result = result.substring(0, result.length()-2);
                         Gson gson = new Gson();
-                        ShopResponce sr = gson.fromJson(result, ShopResponce.class);
+                        ShopResponse sr = gson.fromJson(result, ShopResponse.class);
+                        for (Feature feature : sr.data.features) {
+
+                        }
                         break;
                     default:
                         result = "Произошла ошибка";
