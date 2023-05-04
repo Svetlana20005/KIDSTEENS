@@ -30,14 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 new CameraPosition(new Point(55.751574, 37.573856), 11.0f, 0.0f, 0.0f),
                 new Animation(Animation.Type.SMOOTH, 0),
                 null);
-        ShopsServer.sendRequest(new Runnable() {
-            @Override
-            public void run() {
-                runOnUiThread(()->{
-
-                });
-            }
-        });
+        ShopsServer.sendRequest();
     }
     @Override
     protected void onStop() {
