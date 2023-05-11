@@ -19,6 +19,7 @@ import com.yandex.runtime.ui_view.ViewProvider;
 
 public class MainActivity extends AppCompatActivity {
     MapView mapview;
+    Runnable runnable;//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 new CameraPosition(new Point(55.751574, 37.573856), 11.0f, 0.0f, 0.0f),
                 new Animation(Animation.Type.SMOOTH, 0),
                 null);
-        ShopsServer.sendRequest();
+        ShopsServer.sendRequest(runnable);//
     }
     @Override
     protected void onStop() {

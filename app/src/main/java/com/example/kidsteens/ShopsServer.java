@@ -40,9 +40,7 @@ public class ShopsServer {
                         result = result.substring(0, result.length()-2);
                         Gson gson = new Gson();
                         ShopResponse sr = gson.fromJson(result, ShopResponse.class);
-                        for (Feature feature : ) {
-
-                        }
+                        //
                         runnable.run(sr.data.features);
                         break;
                     default:
