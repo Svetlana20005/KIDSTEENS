@@ -1,5 +1,7 @@
 package com.example.kidsteens;
 
+import com.yandex.mapkit.map.MapObjectTapListener;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -9,6 +11,8 @@ public class Shop {
     private ArrayList<Category> categories;
     private ArrayList<Product> products;
     private Address address;
+
+    private MapObjectTapListener mapObjectTapListener;
 
     @Override
     public boolean equals(Object o) {
@@ -85,5 +89,13 @@ public class Shop {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public MapObjectTapListener getMapObjectTapListener() {
+        return mapObjectTapListener;
+    }
+
+    public void setMapObjectTapListener(MapObjectTapListener mapObjectTapListener) {
+        this.mapObjectTapListener = mapObjectTapListener;
     }
 }
