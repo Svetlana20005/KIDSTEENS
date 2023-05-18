@@ -2,7 +2,9 @@ package com.example.kidsteens;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 new CameraPosition(new Point(55.506943, 47.491764), 11.0f, 0.0f, 0.0f),
                 new Animation(Animation.Type.SMOOTH, 0),
                 null);
-        ShopsServer.sendRequest(runnable);//
+        ShopsServer.sendRequest(runnable);
     }
     @Override
     protected void onStop() {
@@ -77,8 +79,11 @@ public class MainActivity extends AppCompatActivity {
         mo.setMapObjectTapListener(new MapObjectTapListener() {
             @Override
             public boolean onMapObjectTap(@NonNull MapObject mapObject, @NonNull Point point) {
-                System.out.println(1234);
-                Toast.makeText(getBaseContext(), mo.getName(), Toast.LENGTH_SHORT).show();
+                DialogFragment newFragment = new ChooseShopDialogFragment(()->{
+                    Intent intent = new Intent(MainActivity.this, ShopActivity.class);
+                    startActivity(intent);
+                },()->{});
+                newFragment.show(getSupportFragmentManager(),"chooseShop");
                 return true;
             }
         });
