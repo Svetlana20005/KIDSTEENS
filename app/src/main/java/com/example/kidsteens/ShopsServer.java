@@ -16,7 +16,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class ShopsServer {
-    public static void sendRequest(Runnable runnable) {
+    public static void sendRequest(MyRunnable runnable) {
         HttpUrl.Builder url = HttpUrl.parse("https://5ka.ru/api/v2/stores/?bbox=55.4734638973159,47.361387184204105,55.54039353321981,47.622140815795895").newBuilder();
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
