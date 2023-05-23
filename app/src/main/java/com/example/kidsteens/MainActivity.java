@@ -44,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MapKitFactory.setApiKey("fc9af0dd-f0af-4679-87db-9442334d08f4");
-        MapKitFactory.initialize(this);
         setContentView(R.layout.activity_main);
         mapview = (MapView)findViewById(R.id.mapview);
         mapview.getMap().move(

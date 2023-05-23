@@ -1,4 +1,4 @@
-package com.example.kidsteens;
+package com.example.kidsteens.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

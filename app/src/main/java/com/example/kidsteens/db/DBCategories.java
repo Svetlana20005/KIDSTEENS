@@ -1,9 +1,11 @@
-package com.example.kidsteens;
+package com.example.kidsteens.db;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.example.kidsteens.Category;
 
 import java.util.ArrayList;
 
@@ -34,6 +36,7 @@ public class DBCategories {
                 categoryEntities.add(p);
             }while (cursor.moveToNext());
         }
+        cursor.close();
         return categoryEntities;
     }
     public Category selectByName(String name){
@@ -50,6 +53,7 @@ public class DBCategories {
         }
         Category c = new Category(name);
         c.setId(this.insert(c));
+        cursor.close();
         return c;
     }
 }

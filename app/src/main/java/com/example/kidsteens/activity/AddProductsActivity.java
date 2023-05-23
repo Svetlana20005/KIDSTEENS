@@ -1,10 +1,16 @@
-package com.example.kidsteens;
+package com.example.kidsteens.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.kidsteens.Category;
+import com.example.kidsteens.Product;
+import com.example.kidsteens.R;
+import com.example.kidsteens.db.DBCategories;
+import com.example.kidsteens.db.DBProducts;
 
 public class AddProductsActivity extends AppCompatActivity {
     EditText productName, price, categoryName;

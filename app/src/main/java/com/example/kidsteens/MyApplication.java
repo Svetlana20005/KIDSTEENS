@@ -1,5 +1,14 @@
 package com.example.kidsteens;
 
-public class MyApplication {
+import android.app.Application;
 
+import com.yandex.mapkit.MapKitFactory;
+
+public class MyApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        MapKitFactory.setApiKey("fc9af0dd-f0af-4679-87db-9442334d08f4");
+        MapKitFactory.initialize(this);
+    }
 }

@@ -1,9 +1,16 @@
-package com.example.kidsteens;
+package com.example.kidsteens.db;
+
+import static com.example.kidsteens.db.OpenHelper.PRODUCTS_CATEGORY_ID;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import androidx.annotation.NonNull;
+
+import com.example.kidsteens.Category;
+import com.example.kidsteens.Product;
 
 import java.util.ArrayList;
 
@@ -17,12 +24,17 @@ public class DBProducts {
     public void insert(Product p){
         ContentValues cv = new ContentValues();
         cv.put(OpenHelper.PRODUCTS_NAME, p.getName());
-        cv.put(OpenHelper.PRODUCTS_CATEGORY_ID, p.getCategory_id());
+        cv.put(PRODUCTS_CATEGORY_ID, p.getCategory_id());
         cv.put(OpenHelper.PRODUCTS_PRICE, p.getPrice());
         db.insert(OpenHelper.PRODUCTS_TABLE_NAME, null, cv);
     }
     public ArrayList<Product> getAll(){
         Cursor cursor = db.query(OpenHelper.PRODUCTS_TABLE_NAME,null,null,null,null,null,null);
+        return getProductArrayList(cursor);
+    }
+
+    @NonNull
+    private ArrayList<Product> getProductArrayList(Cursor cursor) {
         ArrayList<Product> productEntities = new ArrayList<>();
         cursor.moveToFirst();
         if(!cursor.isAfterLast()){
@@ -35,6 +47,13 @@ public class DBProducts {
                 productEntities.add(p);
             }while (cursor.moveToNext());
         }
+        cursor.close();
         return productEntities;
+    }
+
+    public ArrayList<Product> getAllByCategory(Category category){
+        String[] args = {category.getId()+""};
+        Cursor cursor = db.query(OpenHelper.PRODUCTS_TABLE_NAME,null,PRODUCTS_CATEGORY_ID + " = ? " ,args,null,null,null);
+        return getProductArrayList(cursor);
     }
 }
