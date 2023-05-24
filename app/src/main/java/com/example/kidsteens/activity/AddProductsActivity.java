@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.kidsteens.classes.Category;
 import com.example.kidsteens.classes.Product;
@@ -30,13 +31,17 @@ public class AddProductsActivity extends AppCompatActivity {
         dbCategories = new DBCategories(getBaseContext());
     }
     public void save(){
-        String cN = categoryName.getText().toString();
-        Category category = dbCategories.selectByName(cN);
-        String p = price.getText().toString();
-        Double priceDouble = Double.parseDouble(p);
-        String name = productName.getText().toString();
-        Product product = new Product(name, category.getId(), priceDouble);
-        dbProducts.insert(product);
-        finish();
+        try{
+            String cN = categoryName.getText().toString();
+            Category category = dbCategories.selectByName(cN);
+            String p = price.getText().toString();
+            Double priceDouble = Double.parseDouble(p);
+            String name = productName.getText().toString();
+            Product product = new Product(name, category.getId(), priceDouble);
+            dbProducts.insert(product);
+            finish();
+        }catch (NullPointerException e){
+            e.printStackTrace();
+        }
     }
 }

@@ -47,7 +47,6 @@ public class ShopActivity extends AppCompatActivity {
                 products.addAll(dbProducts.getAllByCategory(category));
                 myProductAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
