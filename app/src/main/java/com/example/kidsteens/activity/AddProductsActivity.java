@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.kidsteens.Category;
-import com.example.kidsteens.Product;
+import com.example.kidsteens.classes.Category;
+import com.example.kidsteens.classes.Product;
 import com.example.kidsteens.R;
 import com.example.kidsteens.db.DBCategories;
 import com.example.kidsteens.db.DBProducts;

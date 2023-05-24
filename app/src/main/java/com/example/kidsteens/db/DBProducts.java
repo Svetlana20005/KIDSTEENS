@@ -9,8 +9,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.NonNull;
 
-import com.example.kidsteens.Category;
-import com.example.kidsteens.Product;
+import com.example.kidsteens.classes.Category;
+import com.example.kidsteens.classes.Product;
 
 import java.util.ArrayList;
 

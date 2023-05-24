@@ -1,4 +1,4 @@
-package com.example.kidsteens;
+package com.example.kidsteens.classes;
 
 import java.util.Objects;
 

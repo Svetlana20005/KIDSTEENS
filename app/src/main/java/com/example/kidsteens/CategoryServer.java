@@ -1,5 +1,7 @@
 package com.example.kidsteens;
 
+import com.example.kidsteens.classes.Category;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.kidsteens.activity.AddProductsActivity;
+import com.example.kidsteens.classes.Product;
 import com.example.kidsteens.db.DBProducts;
 
 import java.util.ArrayList;

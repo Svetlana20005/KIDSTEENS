@@ -1,4 +1,4 @@
-package com.example.kidsteens;
+package com.example.kidsteens.shopandmap;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+
+import com.example.kidsteens.R;
 
 public class ChooseShopDialogFragment extends DialogFragment {
     Runnable runnable1, runnable2;

@@ -1,5 +1,8 @@
-package com.example.kidsteens;
+package com.example.kidsteens.shopandmap;
 
+import com.example.kidsteens.classes.Address;
+import com.example.kidsteens.classes.Category;
+import com.example.kidsteens.classes.Product;
 import com.yandex.mapkit.map.MapObjectTapListener;
 
 import java.util.ArrayList;

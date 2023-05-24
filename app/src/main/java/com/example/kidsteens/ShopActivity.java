@@ -8,9 +8,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.kidsteens.classes.Category;
+import com.example.kidsteens.classes.Product;
 import com.example.kidsteens.db.DBCategories;
 import com.example.kidsteens.db.DBProducts;
 

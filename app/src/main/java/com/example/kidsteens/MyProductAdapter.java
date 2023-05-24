@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.kidsteens.classes.Product;
+
 import java.util.ArrayList;
 
 public class MyProductAdapter extends ArrayAdapter<Product> {

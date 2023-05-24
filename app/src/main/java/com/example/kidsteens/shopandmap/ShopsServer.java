@@ -1,9 +1,10 @@
-package com.example.kidsteens;
+package com.example.kidsteens.shopandmap;
 
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.kidsteens.MyRunnable;
 import com.google.gson.Gson;
 
 import java.io.IOException;

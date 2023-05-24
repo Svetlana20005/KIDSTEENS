@@ -1,8 +1,8 @@
-package com.example.kidsteens;
+package com.example.kidsteens.classes;
 
 import java.util.Objects;
 
-public class Child extends User{
+public class Child extends User {
     private int id, parent_id;
     private User parent;
 

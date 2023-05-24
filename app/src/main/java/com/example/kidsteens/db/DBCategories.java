@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.kidsteens.Category;
+import com.example.kidsteens.classes.Category;
 
 import java.util.ArrayList;
 

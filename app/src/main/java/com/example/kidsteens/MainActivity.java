@@ -7,8 +7,12 @@ import androidx.fragment.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
+import com.example.kidsteens.classes.Address;
+import com.example.kidsteens.shopandmap.ChooseShopDialogFragment;
+import com.example.kidsteens.shopandmap.Feature;
+import com.example.kidsteens.shopandmap.Shop;
+import com.example.kidsteens.shopandmap.ShopsServer;
 import com.yandex.mapkit.Animation;
 import com.yandex.mapkit.MapKitFactory;
 import com.yandex.mapkit.geometry.Point;
