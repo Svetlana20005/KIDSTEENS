@@ -15,7 +15,7 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        screen1 = findViewById(R.id.screen1);
+        screen1 = findViewById(R.id.screen2);
         backgroundPhone1 = findViewById(R.id.backgroundphone1);
         backgroundPass1 = findViewById(R.id.backgroundpass1);
         buttonEnter = findViewById(R.id.buttonenter);

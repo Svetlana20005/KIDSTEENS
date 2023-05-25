@@ -27,7 +27,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     MapView mapview;
     ArrayList<Shop> shops = new ArrayList<>();
-    MyRunnable runnable = new MyRunnable() {
+    MyRunnable runnable = new MyRunnable<ArrayList<Feature>>() {
         @Override
         public void run(ArrayList<Feature> arrayList) {
             runOnUiThread(()->{

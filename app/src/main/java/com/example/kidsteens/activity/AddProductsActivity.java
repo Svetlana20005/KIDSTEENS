@@ -42,6 +42,7 @@ public class AddProductsActivity extends AppCompatActivity {
             finish();
         }catch (NullPointerException e){
             e.printStackTrace();
+            Toast.makeText(this, "Ошибка", Toast.LENGTH_SHORT).show();
         }
     }
 }

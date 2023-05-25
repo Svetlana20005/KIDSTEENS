@@ -19,8 +19,8 @@ import java.util.ArrayList;
 
 public class ShopActivity extends AppCompatActivity {
     Spinner spinner;
-    ArrayList<Category> categories;
-    ArrayList<Product> products;
+    ArrayList<Category> categories = new ArrayList<>();
+    ArrayList<Product> products = new ArrayList<>();
     DBCategories dbCategories;
     DBProducts dbProducts;
     ListView productsLV;
@@ -33,8 +33,28 @@ public class ShopActivity extends AppCompatActivity {
         productsLV = findViewById(R.id.productsLV);
         dbCategories = new DBCategories(getBaseContext());
         dbProducts = new DBProducts(getBaseContext());
-        categories = dbCategories.getAll();
-        products = dbProducts.getAll();
+        RetrofitHelper.getAllCategories(new MyRunnable<ArrayList<Category>>() {
+            @Override
+            public void run(ArrayList<Category> result) {
+                categories.clear();
+                if(result != null){
+                    categories.addAll(result);
+                }
+                ArrayAdapter adapter = (ArrayAdapter) spinner.getAdapter();
+                adapter.notifyDataSetChanged();
+            }
+        });
+        RetrofitHelper.getAllProducts(new MyRunnable<ArrayList<Product>>() {
+            @Override
+            public void run(ArrayList<Product> result) {
+                products.clear();
+                if(result != null){
+                    products.addAll(result);
+                }
+                ArrayAdapter adapter = (ArrayAdapter) productsLV.getAdapter();
+                adapter.notifyDataSetChanged();
+            }
+        });
         spinner.setAdapter(new ArrayAdapter<Category>(getBaseContext(), android.R.layout.simple_list_item_1, categories));
         productsLV.setAdapter(myProductAdapter = new MyProductAdapter(getBaseContext(), products));
 
@@ -43,9 +63,17 @@ public class ShopActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Category category = categories.get(position);
-                products.clear();
-                products.addAll(dbProducts.getAllByCategory(category));
-                myProductAdapter.notifyDataSetChanged();
+                RetrofitHelper.getAllProductsByCategory(category, new MyRunnable<ArrayList<Product>>() {
+                    @Override
+                    public void run(ArrayList<Product> result) {
+                        products.clear();
+                        if(result != null){
+                            products.addAll(result);
+                        }
+                        ArrayAdapter adapter = (ArrayAdapter) productsLV.getAdapter();
+                        adapter.notifyDataSetChanged();
+                    }
+                });
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {

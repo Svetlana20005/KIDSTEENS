@@ -1,5 +1,6 @@
 package com.example.kidsteens;
 
+import com.example.kidsteens.classes.Category;
 import com.example.kidsteens.classes.Product;
 
 import java.util.ArrayList;
@@ -12,14 +13,17 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ProductServer {
-    @POST("/product")
-    @FormUrlEncoded
-    public Call<ArrayList<Product>> products(@Field("name") String name, @Field("price") Double price, @Field("categoryId") int categoryId);
+    @GET("/product/{id}")
+    Call<Product> product(@Path("id") int id);
 
-    @GET("/product/{idx}")
-    public Call<Product> product(@Path("idx") int id);
-    @PUT("/product")
-    public Call<Void> savProduct(@Body Product product);
+    @PUT("/product/{id}")
+    Call<Void> saveProduct(@Path("id") String id, @Body Product product);
+
+    @GET("/product")
+    Call<ArrayList<Product>> products();
+    @GET("/product")
+    Call<ArrayList<Product>> productsByCategory(@Query("category_id") int category_id);
 }
