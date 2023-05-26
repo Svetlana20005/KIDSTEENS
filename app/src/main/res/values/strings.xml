@@ -5,7 +5,13 @@
     <string name="choose_shop_ask_no">Нет</string>
     <string name="tv_enter">Вход</string>
     <string name="tv_registration">Кто вы?</string>
+    <string name="tv_registration_parent">Регистрация</string>
+    <string name="tv_parent_profile">Профиль</string>
     <string name="et_phone">Телефон</string>
     <string name="et_password">Пароль</string>
-    <string name="tv_enter_1">Войти</string>
+    <string name="btn_enter">Войти</string>
+    <string name="btn_parent">Родитель</string>
+    <string name="btn_child">Ребёнок</string>
+    <string name="btn_registration">Зарегистрироваться</string>
+    <string name="btn_back">Назад</string>
 </resources>

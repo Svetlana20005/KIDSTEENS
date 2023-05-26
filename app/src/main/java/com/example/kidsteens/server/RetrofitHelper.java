@@ -1,7 +1,10 @@
-package com.example.kidsteens;
+package com.example.kidsteens.server;
 
+import com.example.kidsteens.MyRunnable;
 import com.example.kidsteens.classes.Category;
 import com.example.kidsteens.classes.Product;
+import com.example.kidsteens.server.CategoryServer;
+import com.example.kidsteens.server.ProductServer;
 
 import java.util.ArrayList;
 

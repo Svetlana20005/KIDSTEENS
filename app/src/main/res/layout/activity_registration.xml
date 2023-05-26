@@ -28,12 +28,81 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/screen2" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="167dp" />
+    <Button
+        android:id="@+id/buttonparent"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/button_enter"
+        android:paddingTop="1dp"
+        android:paddingBottom="0dp"
+        android:text="@string/btn_parent"
+        android:textAppearance="@style/button"
+        app:layout_constraintStart_toEndOf="@+id/view1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter" />
+
+    <Button
+        android:id="@+id/buttonchild"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/button_enter"
+        android:paddingTop="1dp"
+        android:paddingBottom="0dp"
+        android:text="@string/btn_child"
+        android:textAppearance="@style/button"
+        app:layout_constraintStart_toEndOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/buttonparent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:elevation="12dp"
+        app:cardCornerRadius="40dp"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="195dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:elevation="12dp"
+        app:cardCornerRadius="40dp"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="344dp">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnback1"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_enter"
+        android:paddingTop="1dp"
+        android:paddingBottom="0dp"
+        android:text="@string/btn_back"
+        android:textAppearance="@style/button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,30 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartActivity">
+    tools:context=".RegistrationParentActivity">
 
     <View
-        android:id="@+id/screen1"
+        android:id="@+id/screen3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/screen_1"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
-
     <TextView
-        android:id="@+id/tv_enter"
-        android:layout_width="86dp"
+        android:id="@+id/tv_registration_parent"
+        android:layout_width="200dp"
         android:layout_height="38dp"
         android:layout_marginTop="80dp"
         android:gravity="top"
         android:paddingStart="10sp"
-        android:text="@string/tv_enter"
+        android:text="@string/tv_registration_parent"
         android:textAppearance="@style/tv_head"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/screen1" />
+        app:layout_constraintTop_toTopOf="@+id/screen3" />
 
     <EditText
         android:id="@+id/backgroundphone1"
@@ -39,9 +38,9 @@
         android:text="@string/et_phone"
         android:textAppearance="@style/phone_pass"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_enter" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_registration_parent" />
 
     <EditText
         android:id="@+id/backgroundpass1"
@@ -58,16 +57,30 @@
         app:layout_constraintTop_toBottomOf="@+id/backgroundphone1" />
 
     <Button
-        android:id="@+id/buttonenter"
+        android:id="@+id/button_registration"
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/button_enter"
         android:paddingTop="2dp"
-        android:text="@string/btn_enter"
+        android:text="@string/btn_registration"
         android:textAppearance="@style/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backgroundpass1" />
+
+    <Button
+        android:id="@+id/btnback2"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_enter"
+        android:paddingTop="1dp"
+        android:paddingBottom="0dp"
+        android:text="@string/btn_back"
+        android:textAppearance="@style/button"
+        app:layout_constraintBottom_toBottomOf="@+id/screen3"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

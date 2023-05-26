@@ -1,4 +1,4 @@
-package com.example.kidsteens;
+package com.example.kidsteens.server;
 
 import com.example.kidsteens.classes.Category;
 

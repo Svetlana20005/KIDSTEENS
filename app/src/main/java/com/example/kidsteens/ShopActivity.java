@@ -13,6 +13,7 @@ import com.example.kidsteens.classes.Category;
 import com.example.kidsteens.classes.Product;
 import com.example.kidsteens.db.DBCategories;
 import com.example.kidsteens.db.DBProducts;
+import com.example.kidsteens.server.RetrofitHelper;
 
 import java.util.ArrayList;
 
