@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +30,10 @@ public class MyProductAdapter extends ArrayAdapter<Product> {
         }
         ((TextView) convertView.findViewById(R.id.tvName)).setText(String.valueOf(product.getName()));
         ((TextView) convertView.findViewById(R.id.tvPrice)).setText(String.valueOf(product.getPrice()));
+        convertView.findViewById(R.id.imageView4).setOnClickListener((v)->{
+            Toast.makeText(getContext(), "Корзина пока не работает.",
+                    Toast.LENGTH_SHORT).show();
+        });
         return convertView;
     }
 }

@@ -16,7 +16,7 @@
 
     <TextView
         android:id="@+id/tv_registration_parent"
-        android:layout_width="200dp"
+        android:layout_width="210dp"
         android:layout_height="38dp"
         android:layout_marginTop="80dp"
         android:gravity="top"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="@+id/screen3" />
 
     <EditText
-        android:id="@+id/backgroundphone1"
+        android:id="@+id/phone2"
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_marginTop="80dp"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_registration_parent" />
 
     <EditText
-        android:id="@+id/backgroundpass1"
+        android:id="@+id/pass2"
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_marginTop="80dp"
@@ -54,10 +54,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backgroundphone1" />
+        app:layout_constraintTop_toBottomOf="@+id/phone2" />
 
     <Button
-        android:id="@+id/button_registration"
+        android:id="@+id/button_registration2"
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_marginTop="80dp"
@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backgroundpass1" />
+        app:layout_constraintTop_toBottomOf="@+id/pass2" />
 
     <Button
         android:id="@+id/btnback2"

@@ -30,24 +30,24 @@
         app:layout_constraintTop_toTopOf="@+id/screen1" />
 
     <EditText
-        android:id="@+id/backgroundphone1"
+        android:id="@+id/phone1"
         android:layout_width="250dp"
         android:layout_height="35dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/background_phone_1"
         android:paddingStart="12sp"
         android:text="@string/et_phone"
         android:textAppearance="@style/phone_pass"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_enter" />
 
     <EditText
-        android:id="@+id/backgroundpass1"
+        android:id="@+id/pass1"
         android:layout_width="250dp"
         android:layout_height="35dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/background_pass_1"
         android:paddingStart="12sp"
         android:text="@string/et_password"
@@ -55,13 +55,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backgroundphone1" />
+        app:layout_constraintTop_toBottomOf="@+id/phone1" />
 
     <Button
         android:id="@+id/buttonenter"
         android:layout_width="250dp"
         android:layout_height="35dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/button_enter"
         android:paddingTop="2dp"
         android:text="@string/btn_enter"
@@ -69,5 +69,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backgroundpass1" />
+        app:layout_constraintTop_toBottomOf="@+id/pass1" />
+
+    <Button
+        android:id="@+id/button_registration1"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/button_enter"
+        android:paddingTop="2dp"
+        android:text="@string/btn_registration"
+        android:textAppearance="@style/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonenter" />
 </androidx.constraintlayout.widget.ConstraintLayout>

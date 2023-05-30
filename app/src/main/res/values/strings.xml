@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KIDS&amp;TEENS</string>
+    <string name="app_name">GoKids</string>
     <string name="choose_shop_ask">Выбрать продукты в этом магазине?</string>
     <string name="choose_shop_ask_yes">Да</string>
     <string name="choose_shop_ask_no">Нет</string>
@@ -14,4 +14,5 @@
     <string name="btn_child">Ребёнок</string>
     <string name="btn_registration">Зарегистрироваться</string>
     <string name="btn_back">Назад</string>
+    <string name="btn_shop">Магазин</string>
 </resources>
