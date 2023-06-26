@@ -6,6 +6,10 @@ public class Child extends User {
     private int id, parent_id;
     private User parent;
 
+    public Child(String phone) {
+        super(phone);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -3,6 +3,7 @@ package com.example.kidsteens.server;
 import com.example.kidsteens.MyRunnable;
 import com.example.kidsteens.classes.Category;
 import com.example.kidsteens.classes.Product;
+import com.example.kidsteens.classes.User;
 import com.example.kidsteens.server.CategoryServer;
 import com.example.kidsteens.server.ProductServer;
 
@@ -25,7 +26,7 @@ public class RetrofitHelper {
         }
         return instance;
     }
-    private void RetroHelper(){}
+
     public static ArrayList<Category> getAllCategories(MyRunnable<ArrayList<Category>> runnable){
         CategoryServer cs = getServer().create(CategoryServer.class);
         Call<ArrayList<Category>> categories = cs.categories();
@@ -61,6 +62,23 @@ public class RetrofitHelper {
 
             @Override
             public void onFailure(Call<ArrayList<Product>> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+        return null;
+    }
+
+    public static Void login(MyRunnable<Void> runnable, LoginData loginData){
+        UserServer us = getServer().create(UserServer.class);
+        Call<Void> users = us.login(loginData.getPhone(), loginData.getCode());
+        users.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                runnable.run(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
                 t.printStackTrace();
             }
         });

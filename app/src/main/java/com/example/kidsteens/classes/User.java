@@ -8,6 +8,15 @@ public class User {
     private String phone;
     private ArrayList<Child> children;
 
+    public User(String phone) {
+        this.phone = phone;
+    }
+
+    public User(int id, String phone) {
+        this.id = id;
+        this.phone = phone;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -9,11 +9,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.kidsteens.server.LoginData;
+import com.example.kidsteens.server.RetrofitHelper;
+
 public class StartActivity extends AppCompatActivity {
     View screen1;
     EditText phone1,pass1;
     Button buttonEnter, btnReg1;
     TextView tvEnter;
+    RetrofitHelper helper;
+    LoginData loginData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +29,15 @@ public class StartActivity extends AppCompatActivity {
         buttonEnter = findViewById(R.id.buttonenter);
         btnReg1 = findViewById(R.id.button_registration1);
         tvEnter = findViewById(R.id.tv_enter);
+        loginData = new LoginData();
+        loginData.setPhone(phone1.getText().toString());
+        loginData.setCode(pass1.getText().toString());
         buttonEnter.setOnClickListener((v) ->{
-            Intent intent = new Intent(StartActivity.this, ParentProfileActivity.class);
-            startActivity(intent);
+            helper.login((result)->{
+
+                Intent intent = new Intent(StartActivity.this, ParentProfileActivity.class);
+                startActivity(intent);
+            }, loginData);
         });
         btnReg1.setOnClickListener((v) ->{
             Intent intent = new Intent(StartActivity.this, RegistrationActivity.class);
