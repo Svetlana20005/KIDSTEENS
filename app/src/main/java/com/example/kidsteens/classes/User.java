@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class User {
     private int id;
-    private String phone;
+    private String phone, name;
     private ArrayList<Child> children;
 
     public User(String phone) {
@@ -52,5 +52,13 @@ public class User {
 
     public void setChildren(ArrayList<Child> children) {
         this.children = children;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

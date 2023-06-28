@@ -1,5 +1,7 @@
 package com.example.kidsteens.server;
 
+import android.content.SharedPreferences;
+
 import com.example.kidsteens.MyRunnable;
 import com.example.kidsteens.classes.Category;
 import com.example.kidsteens.classes.Product;
@@ -68,17 +70,17 @@ public class RetrofitHelper {
         return null;
     }
 
-    public static Void login(MyRunnable<Void> runnable, LoginData loginData){
+    public static Void login(MyRunnable<Token> runnable, LoginData loginData){
         UserServer us = getServer().create(UserServer.class);
-        Call<Void> users = us.login(loginData.getPhone(), loginData.getCode());
-        users.enqueue(new Callback<Void>() {
+        Call<Token> users = us.login(loginData.getPhone(), loginData.getCode());
+        users.enqueue(new Callback<Token>() {
             @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
+            public void onResponse(Call<Token> call, Response<Token> response) {
                 runnable.run(response.body());
             }
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onFailure(Call<Token> call, Throwable t) {
                 t.printStackTrace();
             }
         });

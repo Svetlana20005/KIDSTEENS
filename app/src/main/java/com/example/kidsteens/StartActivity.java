@@ -29,12 +29,12 @@ public class StartActivity extends AppCompatActivity {
         buttonEnter = findViewById(R.id.buttonenter);
         btnReg1 = findViewById(R.id.button_registration1);
         tvEnter = findViewById(R.id.tv_enter);
-        loginData = new LoginData();
-        loginData.setPhone(phone1.getText().toString());
-        loginData.setCode(pass1.getText().toString());
         buttonEnter.setOnClickListener((v) ->{
+            loginData = new LoginData();
+            loginData.setPhone(phone1.getText().toString());
+            loginData.setCode(pass1.getText().toString());
             helper.login((result)->{
-
+                System.out.println(result);
                 Intent intent = new Intent(StartActivity.this, ParentProfileActivity.class);
                 startActivity(intent);
             }, loginData);
