@@ -7,7 +7,7 @@
     tools:context=".ParentProfileActivity">
 
     <View
-        android:id="@+id/screen4"
+        android:id="@+id/screen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/screen_1"
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/screen4" />
+        app:layout_constraintTop_toTopOf="@+id/screen" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview3"
@@ -62,5 +62,19 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardview3" />
+
+    <Button
+        android:id="@+id/btnMyChild"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button_enter"
+        android:paddingTop="2dp"
+        android:text="@string/btn_my_children"
+        android:textAppearance="@style/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_shop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

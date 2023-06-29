@@ -9,10 +9,13 @@
     <string name="tv_parent_profile">Профиль</string>
     <string name="et_phone">Телефон</string>
     <string name="et_password">Пароль</string>
+    <string name="et_password1">Пароль/SMS-код</string>
+    <string name="et_user_name">Имя пользователя</string>
     <string name="btn_enter">Войти</string>
     <string name="btn_parent">Родитель</string>
     <string name="btn_child">Ребёнок</string>
     <string name="btn_registration">Зарегистрироваться</string>
     <string name="btn_back">Назад</string>
     <string name="btn_shop">Магазин</string>
+    <string name="btn_my_children">Мои дети</string>
 </resources>

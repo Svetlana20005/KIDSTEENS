@@ -7,12 +7,13 @@
     tools:context=".StartActivity">
 
     <View
-        android:id="@+id/screen1"
+        android:id="@+id/screen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/screen_1"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints" />
 
 
     <TextView
@@ -27,10 +28,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/screen1" />
+        app:layout_constraintTop_toTopOf="@+id/screen" />
 
     <EditText
-        android:id="@+id/phone1"
+        android:id="@+id/phone"
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_marginTop="64dp"
@@ -44,18 +45,18 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_enter" />
 
     <EditText
-        android:id="@+id/pass1"
+        android:id="@+id/pass"
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_marginTop="64dp"
         android:background="@drawable/background_pass_1"
         android:paddingStart="12sp"
-        android:text="@string/et_password"
+        android:text="Пароль/sms-код"
         android:textAppearance="@style/phone_pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone1" />
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
 
     <Button
         android:id="@+id/buttonenter"
@@ -69,10 +70,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass1" />
+        app:layout_constraintTop_toBottomOf="@+id/pass" />
 
     <Button
-        android:id="@+id/button_registration1"
+        android:id="@+id/button_registration"
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_marginTop="44dp"

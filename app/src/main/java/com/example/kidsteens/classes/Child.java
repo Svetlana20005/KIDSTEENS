@@ -3,7 +3,7 @@ package com.example.kidsteens.classes;
 import java.util.Objects;
 
 public class Child extends User {
-    private int id, parent_id;
+    private int parent_id;
     private User parent;
 
     public Child(String phone) {
@@ -16,7 +16,7 @@ public class Child extends User {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Child child = (Child) o;
-        return id == child.id;
+        return this.id == child.id;
     }
 
     @Override

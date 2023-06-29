@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class User {
-    private int id;
-    private String phone, name;
-    private ArrayList<Child> children;
-
+    protected int id;
+    protected String phone, name;
+    protected ArrayList<Child> children;
+public User(){}
     public User(String phone) {
         this.phone = phone;
     }

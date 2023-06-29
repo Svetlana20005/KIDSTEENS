@@ -1,5 +1,9 @@
 package com.example.kidsteens.server;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import static com.example.kidsteens.StartActivity.TOKEN;
+
 import android.content.SharedPreferences;
 
 import com.example.kidsteens.MyRunnable;
@@ -8,9 +12,14 @@ import com.example.kidsteens.classes.Product;
 import com.example.kidsteens.classes.User;
 import com.example.kidsteens.server.CategoryServer;
 import com.example.kidsteens.server.ProductServer;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -19,11 +28,25 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitHelper {
     private static Retrofit instance = null;
+    public static SharedPreferences sharedPreferences;
+    private RetrofitHelper(){}
+
     public static Retrofit getServer(){
         if(instance == null){
+            OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                    .connectTimeout(1, TimeUnit.MINUTES)
+                    .readTimeout(30, TimeUnit.SECONDS)
+                    .writeTimeout(30, TimeUnit.SECONDS)
+                    .addInterceptor(chain -> {
+                        String token = sharedPreferences.getString(TOKEN, "");
+                        Request.Builder newRequest = chain.request().newBuilder();
+                            newRequest.addHeader("Authorization", token);
+                        return chain.proceed(newRequest.build());
+                    }).build();
             instance = new Retrofit.Builder()
                     .baseUrl("http://192.168.1.251:8080")
                     .addConverterFactory(GsonConverterFactory.create())
+                    .client(okHttpClient)
                     .build();
         }
         return instance;

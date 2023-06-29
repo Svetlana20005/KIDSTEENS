@@ -11,22 +11,27 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ParentProfileActivity extends AppCompatActivity {
-    View screen4;
+    View screen;
     TextView tvProf;
     CardView cardView;
     ImageView imageView;
-    Button btnShop;
+    Button btnShop, btnMyChild;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent_profile);
-        screen4 = findViewById(R.id.screen4);
+        screen = findViewById(R.id.screen);
         tvProf = findViewById(R.id.tv_parent_profile);
         cardView = findViewById(R.id.cardview3);
         imageView = findViewById(R.id.imageView3);
         btnShop = findViewById(R.id.button_shop);
+        btnMyChild = findViewById(R.id.btnMyChild);
         btnShop.setOnClickListener((v) ->{
             Intent intent = new Intent(ParentProfileActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+        btnMyChild.setOnClickListener((v) ->{
+            Intent intent = new Intent(ParentProfileActivity.this, MyChildActivity.class);
             startActivity(intent);
         });
     }

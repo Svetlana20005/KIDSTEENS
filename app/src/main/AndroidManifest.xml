@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.CAMERA" />
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -17,17 +17,32 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ParentProfileActivity"
-            android:exported="true">
+            android:name=".QRCodeScannerActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
         <activity
-            android:name=".RegistrationParentActivity"
-            android:exported="true">
+            android:name=".MyChildActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
+        <activity
+            android:name=".QRActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ParentProfileActivity"
+            android:exported="true" />
         <activity
             android:name=".RegistrationActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".StartActivity"
             android:exported="true">
@@ -43,20 +58,16 @@
         </activity>
         <activity
             android:name=".ShopActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".activity.AddProductsActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".DBProductsActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
