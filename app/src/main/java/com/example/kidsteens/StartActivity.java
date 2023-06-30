@@ -86,7 +86,7 @@ public class StartActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         String token = sharedPreferences.getString(TOKEN, "");
-        if(token.equals("")){
+        if(!token.equals("")){
             Intent intent = new Intent(StartActivity.this, ParentProfileActivity.class);
             startActivity(intent);
         }

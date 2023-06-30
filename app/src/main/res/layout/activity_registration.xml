@@ -107,23 +107,28 @@
         android:id="@+id/userName"
         android:layout_width="250dp"
         android:layout_height="35dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/background_pass_1"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserName"
-        tools:layout_editor_absoluteX="52dp" />
+        android:paddingStart="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
 
     <TextView
         android:id="@+id/tvUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:text="Введите имя пользователя:"
         android:textColor="#0B0B0B"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_enter"
-        tools:layout_editor_absoluteX="52dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter" />
 
     <!--    <Button-->
     <!--        android:id="@+id/btnback"-->
